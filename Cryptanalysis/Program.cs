@@ -7,7 +7,6 @@ internal static class Program
     private static void Main()
     {
 
-        Console.Write(Tools.LetterIndex('A'));
         Test();
     }
 

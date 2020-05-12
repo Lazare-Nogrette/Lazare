@@ -36,17 +36,34 @@ public static class Tools
     public static char RotChar(char c, int n)
     {
         int y = Convert.ToInt32(c);
-        if (n >= 27)
+        if (90 >= y && y >= 65 )
         {
-            n -= 26;
+            if (90 < y + n )
+            {
+                return Convert.ToChar(y + n - 26);
+            }
+
+            if (y + n  < 65 )
+            {
+                return Convert.ToChar(y + n + 26);
+            }
+            return Convert.ToChar(y + n);
         }
-        if (y >= 65 && y <= 90 || y >=97 && y <= 122)
+
+        if (122 >= y && y >= 97 )
         {
-            y += n;
-            Convert.ToChar(y);
-            y = c;
+            if (122 < y + n )
+            {
+                return Convert.ToChar(y + n - 26);
+            }
+
+            if (y + n  < 97 )
+            {
+                return Convert.ToChar(y + n + 26);
+            }
+            return Convert.ToChar(y + n);
         }
-        
+
         return c;
     }
 
