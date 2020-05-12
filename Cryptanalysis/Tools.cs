@@ -70,10 +70,12 @@ public static class Tools
     public static int[] Histogram(string str)
     {
         int[] res = new int[26];
-        int i = 0;
-        for (i = 0; i < res.Length; i++)
+        foreach (char i in str)
         {
-            Console.Write(str[i]);
+            if (LetterIndex(i) != -1)
+            {
+                res[LetterIndex(i)] += 1;
+            }
         }
         return res;
     }

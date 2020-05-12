@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 
 namespace Cryptanalysis
 {
@@ -12,17 +13,29 @@ public class Caesar
 
     public string Encrypt(string msg)
     {
-        throw new NotImplementedException();
+        string cez = "";
+        foreach (char x in msg)
+        {
+            cez += Tools.RotChar(x, Key);
+        }
+
+        return cez;
     }
 
     public string Decrypt(string cypherText)
     {
-        throw new NotImplementedException();
+        string real = "";
+        foreach (char y in cypherText)
+        {
+            real += Tools.RotChar(y, -Key);
+        }
+
+        return real;
     }
     
     public static int GuessKey(string cypherText)
     {
-        throw new NotImplementedException();
+         throw new NotImplementedException();
     }
 }
 }
