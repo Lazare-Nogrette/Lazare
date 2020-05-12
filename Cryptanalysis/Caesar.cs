@@ -35,7 +35,16 @@ public class Caesar
     
     public static int GuessKey(string cypherText)
     {
-         throw new NotImplementedException();
+        int[] hist = Tools.Histogram(cypherText);
+        int limit = 0;
+        foreach (int i in hist)
+        {
+            if (limit < i)
+            {
+                limit = i;
+            }
+        }
+        return limit;
     }
 }
 }
